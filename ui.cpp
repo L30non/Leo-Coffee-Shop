@@ -17,10 +17,14 @@ void clearInput() {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
-// Pause execution until the user presses ENTER
+// Pause execution until the user presses ENTER.
+// cin.sync() discards any unread bytes (e.g. the '\n' left by cin >> int)
+// so cin.get() always blocks for a fresh keypress from the user.
 void pressEnterToContinue() {
     cout << "\n  Press ENTER to continue...";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.clear();
+    cin.sync();   // flush whatever is buffered (the stale '\n' from cin >>)
+    cin.get();    // now block until the user actually hits Enter
 }
 
 // Print a divider row of `ch` repeated `width` times

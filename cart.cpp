@@ -75,6 +75,8 @@ void addToCart(vector<CartItem>& cart) {
         clearInput();
         cout << "  Invalid input. Enter a number: ";
     }
+    clearInput();  // Clear the newline left by cin >>
+
     if (id == 0) return;
 
     const MenuItem* m = findMenuItem(id);
@@ -125,6 +127,8 @@ void updateOrder(vector<CartItem>& cart) {
         clearInput();
         cout << "  Enter a number: ";
     }
+    clearInput();  // Clear the newline left by cin >>
+
     if (lineNo == 0) return;
     if (lineNo < 1 || lineNo > (int)cart.size()) {
         cout << "\n  ✗ Invalid line number.\n";
@@ -171,6 +175,8 @@ void deleteOrder(vector<CartItem>& cart) {
         clearInput();
         cout << "  Enter a number: ";
     }
+    clearInput();  // Clear the newline left by cin >>
+
     if (lineNo == 0) return;
     if (lineNo < 1 || lineNo > (int)cart.size()) {
         cout << "\n  ✗ Invalid line number.\n";

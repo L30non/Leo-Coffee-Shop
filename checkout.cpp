@@ -53,6 +53,7 @@ void checkout(vector<CartItem>& cart) {
             cout << "  Must be >= $" << fixed << setprecision(2)
                  << total << ". Try again: $";
         }
+        clearInput();  // Clear the newline left by cin >>
         change = paid - total;
     } else {
         method = (payChoice == 2) ? "Card" : "Mobile Pay";
