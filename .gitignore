@@ -1,3 +1,11 @@
 *.o
 Cafe Ordering Sys Slides.pdf
 cart.o
+cart_data.txt
+cart_data 2.txt
+cart.o
+checkout.o
+main.o
+main.o
+checkout.o
+cart.o
